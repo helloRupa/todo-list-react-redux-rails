@@ -9,9 +9,10 @@ import { fetchTodos } from './actions/todo_actions';
 window.fetchTodos = fetchTodos;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const preloadedState = localStorage.state ?
-    JSON.parse(localStorage.state) : {};
-  let store = configureStore(preloadedState);
+  // const preloadedState = localStorage.state ?
+  //   JSON.parse(localStorage.state) : {};
+  let store = configureStore(/*preloadedState*/);
+  
 // DELETE, FOR TESTING ONLY
 window.store = store;
   const root = document.getElementById('content');

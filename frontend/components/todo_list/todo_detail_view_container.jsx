@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import TodoDetailView from './todo_detail_view';
 // Actions
-import { removeTodo } from '../../actions/todo_actions';
+import { removeTodo, deleteTodo } from '../../actions/todo_actions';
 import { receiveSteps } from '../../actions/step_actions';
 
 const mapDispatchToProps = (dispatch, { todo }) => ({
-  removeTodo: () => dispatch(removeTodo(todo))
+  removeTodo: () => dispatch(removeTodo(todo)),
+  deleteTodo: (todo) => dispatch(deleteTodo(todo)),
 });
 
 export default connect(

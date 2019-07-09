@@ -10,10 +10,10 @@ const configureStore = (preloadedState = {}) => {
     // Phase 3: Using Redux applyMiddleware
     applyMiddleware(thunk, addLoggingToDispatch)
   );
-  store.subscribe(() => {
-    localStorage.state = JSON.stringify(store.getState());
-  });
-  
+  // store.subscribe(() => {
+  //   localStorage.state = JSON.stringify(store.getState());
+  // });
+
   return store;
 };
 
