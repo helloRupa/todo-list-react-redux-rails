@@ -4,10 +4,6 @@ import configureStore from './store/store';
 
 import Root from './components/root';
 
-// DELETE, FOR TESTING ONLY
-import { fetchTodos } from './actions/todo_actions';
-window.fetchTodos = fetchTodos;
-
 document.addEventListener('DOMContentLoaded', () => {
   // const preloadedState = localStorage.state ?
   //   JSON.parse(localStorage.state) : {};
