@@ -9,6 +9,7 @@ class TodoDetailView extends React.Component {
     const { todo, deleteTodo } = this.props;
     return(
       <div>
+        <div>Tags: { todo.tags.map((tag, idx) => tag.name).join(', ') }</div>
         <p className="todo-body">{ todo.body }</p>
         <StepListContainer todo_id={ todo.id } />
         <button
