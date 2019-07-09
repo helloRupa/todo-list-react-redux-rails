@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from '../reducers/root_reducer';
+import thunk from '../middleware/thunk';
 
 const configureStore = (preloadedState = {}) => {
   const store = createStore(
@@ -7,11 +8,12 @@ const configureStore = (preloadedState = {}) => {
     preloadedState,
 
     // Phase 3: Using Redux applyMiddleware
-    applyMiddleware(addLoggingToDispatch, sillyMiddleware)
+    applyMiddleware(thunk, addLoggingToDispatch)
   );
   store.subscribe(() => {
     localStorage.state = JSON.stringify(store.getState());
   });
+  
   return store;
 };
 
