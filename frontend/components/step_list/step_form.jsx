@@ -1,5 +1,6 @@
 import { uniqueId } from '../../utils/idGenerator'
 import React from 'react';
+import { clearErrors } from '../../actions/error_actions';
 
 class StepForm extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class StepForm extends React.Component {
     e.preventDefault();
     const step = Object.assign({}, this.state, { id: uniqueId() });
 
+    this.props.clearErrors();
     this.props.createStep({step}).then(
       () => this.setState({ title: "", body: "" })
     );

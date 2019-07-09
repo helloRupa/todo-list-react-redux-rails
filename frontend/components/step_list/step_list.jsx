@@ -3,7 +3,7 @@ import React from 'react';
 import StepListItemContainer from './step_list_item_container';
 import StepForm from './step_form';
 
-const StepList = ({ steps, todo_id, createStep }) => {
+const StepList = ({ steps, todo_id, createStep, clearErrors }) => {
   const stepItems = steps.map(step => (
     <StepListItemContainer
       key={step.id}
@@ -15,7 +15,7 @@ const StepList = ({ steps, todo_id, createStep }) => {
       <ul className="step-list">
         { stepItems }
       </ul>
-      <StepForm todo_id={ todo_id } createStep={ createStep } />
+      <StepForm todo_id={ todo_id } createStep={ createStep } clearErrors={clearErrors} />
     </div>
   )
 };
