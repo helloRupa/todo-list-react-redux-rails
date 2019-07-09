@@ -13,7 +13,8 @@ class StepListItem extends React.Component {
       this.props.step,
       { done: !this.props.step.done}
     );
-    this.props.receiveStep(toggledStep);
+
+    this.props.updateStep(toggledStep);
   }
 
   render() {
@@ -32,7 +33,7 @@ class StepListItem extends React.Component {
           </button>
           <button
             className="delete-button"
-            onClick={ this.props.removeStep }
+            onClick={ () => {this.props.deleteStep(this.props.step)} }
             >
             Delete
           </button>
