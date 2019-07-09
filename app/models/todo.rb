@@ -4,4 +4,9 @@ class Todo < ApplicationRecord
 
   has_many :steps,
     foreign_key: :todo
+
+  has_many :taggings
+
+  has_many :tags,
+    through: :taggings
 end
