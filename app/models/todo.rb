@@ -10,6 +10,8 @@ class Todo < ApplicationRecord
 
   has_many :tags,
     through: :taggings
+  
+  belongs_to :user
 
   def tag_names=(tag_names)
     self.tags = tag_names.map do |tag_name|

@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       login(@user)
     else
       flash.now[:errors] = @user.errors.full_messages
+      @user = User.new(username: params[:user][:username])
       render :new
     end
   end

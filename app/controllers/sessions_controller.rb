@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
       login(@user)
     else
       flash.now[:errors] = 'Wrong username or password'
+      @user = User.new(username: params[:user][:username])
       render :new
     end
   end
