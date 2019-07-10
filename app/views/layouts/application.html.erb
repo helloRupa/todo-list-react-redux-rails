@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <header>
+      <% if current_user %>
+        <%= current_user.username %>
+        <%= button_to 'Log Out', session_url(current_user), method: :delete %>
+      <% end %>
+    </header>
+
     <%= yield %>
   </body>
 </html>

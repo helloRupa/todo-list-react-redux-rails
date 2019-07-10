@@ -4,5 +4,10 @@ Rails.application.routes.draw do
     resources :steps, only: [:index, :create, :show, :update, :destroy]
   end
 
-  root 'static_pages#root'
+  resources :users, only: [:new, :create]
+  resource :session, only: [:new, :create, :destroy]
+
+  get '/home', to: 'static_pages#root'
+
+  root 'sessions#new'
 end
