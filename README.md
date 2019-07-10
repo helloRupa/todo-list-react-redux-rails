@@ -1,24 +1,16 @@
-# README
+# Todo App
+Dependencies: React, Redux, Webpack, Rails, BCrypt
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create and save todo lists, including steps, to a database. Includes user authentication.
 
-Things you may want to cover:
+## Install Dependencies
+bundle install
 
-* Ruby version
+npm install
 
-* System dependencies
+## Run Todo App
+npm run webpack
 
-* Configuration
+rails s
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Navigate to localhost:3000
